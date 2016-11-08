@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercices JS base 2</title>
+  </head>
+  <body>
+    <!--Exo1 base 2-->
+      <h3>Exo 1 base2</h3>
+      <img src="images/image1.jpg" id="image" onmouseover="this.src='images/image1_2.jpg'" onmouseout="this.src='images/image1.jpg'" />
+    <!--///////////-->
+    <!--Exo2 base 2-->
+      <h3>Exo 2 base2</h3>
+      <form id="myform">
+          <label for="nom">Votre nom  : </label><input type="text" name="nom" value="" id="nom"/>
+      </form>
+    <!--///////////-->
+    <!--Exo3 base2-->
+      <h3>Exo 3 base2</h3>
+      <form>
+          <label for="nom">Votre nom  : </label><input type="text" name="nom" value="" id="name" onkeypress="keypressFunction()" />
+      </form>
+    <!--//////////-->
+    <!--Exo4 base2-->
+      <h3>Exo 4 base2</h3>
+      <form>
+          <label for="nom">Votre nom  : </label><input type="text" name="nom" value="Doe" id="name2" />
+          <label for="prenom">Votre prenom  : </label><input type="text" name="prenom" value="John" id="prenom" />
+          <label for="ville">Votre ville  : </label><input type="text" name="ville" value="New York" id="ville" />
+          <button type="button" name="button" onclick="effacer()">RAZ</button>
+      </form>
+    <!--//////////-->
+    <!--Exo5 et 6 base2-->
+      <h3>Exo 5 base2</h3>
+      <div class="conteneur">
+          <img src="images/image1.jpg" id="image1" onmouseover="changimg()" onmouseout="reback()"/>
+          <img src="images/image2.jpg" id="image2" onmouseover="changimg()" onmouseout="reback()"/>
+          <img src="images/image3.jpg" id="image3" onmouseover="changimg()" onmouseout="reback()"/>
+          <img src="images/image4.jpg" id="image4" onmouseover="changimg()" onmouseout="reback()"/>
+          <img src="images/image5.jpg" id="image5" onmouseover="changimg()" onmouseout="reback()"/>
+      </div>
+    <!--//////////-->
+      <script>
+      //Exo2 base2////////
+          var form = document.getElementById("myform");
+          form.addEventListener("focus", Focus, true);
+          form.addEventListener("blur", Blur, true);
+
+          function Focus(){
+            document.getElementById("nom").style.backgroundColor = "#B31572";
+          };
+          function Blur(){
+            document.getElementById("nom").style.backgroundColor = "";
+            document.getElementById("nom");
+            alert('Merci de votre participation!');
+          };
+      ////////////////////
+      //Exo3 base2////////
+          function keypressFunction(){
+            var entre = document.getElementById("name").value;
+            document.getElementById("name");
+            alert('Vous avez tapez: '+ entre);
+          };
+      ////////////////////
+      //Exo4 base2////////
+          function effacer(){
+            var name = document.getElementById("name2");
+            var prenom = document.getElementById("prenom");
+            var ville = document.getElementById("ville");
+            name.value = "";
+            prenom.value = "";
+            ville.value = "";
+          };
+      ////////////////////
+      //Exo5 base2////////
+          function changimg(){
+            document.getElementById("image1").src = "images/image1_2.jpg";
+            document.getElementById("image2").src = "images/image2_2.jpg";
+            document.getElementById("image3").src = "images/image3_2.jpg";
+            document.getElementById("image4").src = "images/image4_2.jpg";
+            document.getElementById("image5").src = "images/image5_2.jpg";
+          };
+      //Exo6 base2////////
+          function reback(){
+            document.getElementById("image1").src = "images/image1.jpg";
+            document.getElementById("image2").src = "images/image2.jpg";
+            document.getElementById("image3").src = "images/image3.jpg";
+            document.getElementById("image4").src = "images/image4.jpg";
+            document.getElementById("image5").src = "images/image5.jpg";
+          };
+      ////////////////////
+      </script>
+  </body>
+</html>
